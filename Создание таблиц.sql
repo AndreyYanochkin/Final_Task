@@ -1,16 +1,3 @@
---Создание таблицы для загрузки данных из файла
-CREATE TABLE load_date_wine(
-data_load     DATE        DEFAULT sysdate,
-country      VARCHAR2(100),        -- страна
-designation  VARCHAR2(100),       -- название
-points       NUMBER(38,2) DEFAULT 0, --индекс
-price        NUMBER(38,2) DEFAULT 0  CONSTRAINT yav_wine_price_nn       NOT NULL       -- число, нет пустых значений, значений положительные или 0
-                                     CONSTRAINT yav_wine_price_ch       CHECK (price>=0),
-province     VARCHAR2(200),          --Область
-region       VARCHAR2(200),          --регион
-variety      VARCHAR2(200),          --сорт винограда
-winery       VARCHAR2(200)           --винодельня
-);
 --Создание счётчика для Country
 CREATE SEQUENCE yav_seq_country_id
 INCREMENT BY 1

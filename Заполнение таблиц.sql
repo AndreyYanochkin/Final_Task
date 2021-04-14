@@ -146,6 +146,7 @@ left join province_wine  pw on pw.province_id=wiw.province_province_id
 left join region_wine    rw on rw.region_id=wiw.region_region_id
 left join winery_wine    ww on ww.winery_id=wiw.winery_winery_id
 left join variety_wine   vw on vw.variety_id=wiw.variety_variety_id
+;
 
 CREATE OR REPLACE VIEW avg_wine_price_country_variety
 (Country,Variety,AGV_Price)
@@ -157,4 +158,4 @@ cw.country_name
 left join country_wine   cw on cw.country_id = wiw.country_country_id
 left join variety_wine   vw on vw.variety_id=wiw.variety_variety_id
 group by cw.country_name, vw.variety_name
-order by 1,3
+order by 1,3;
